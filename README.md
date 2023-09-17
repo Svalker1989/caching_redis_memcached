@@ -13,17 +13,24 @@
 Установите и запустите memcached.  
 Приведите скриншот systemctl status memcached, где будет видно, что memcached запущен.  
 **Ответ:**  
-
+![](https://github.com/Svalker1989/caching_redis_memcached/blob/main/Z2.PNG)
 Задание 3. Удаление по TTL в Memcached  
 Запишите в memcached несколько ключей с любыми именами и значениями, для которых выставлен TTL 5.  
 Приведите скриншот, на котором видно, что спустя 5 секунд ключи удалились из базы.  
 **Ответ:**  
-
+Подключение к Memcached:  
+`Telnet localhost 11211`
+Ключ добавлен командой `add key *flag* *ttl* *size_in_byte*`  
+Далее вводим зачение для ключа на новой строке  
+Запрос вывода ключа командой `get key *flag*`  
+![](https://github.com/Svalker1989/caching_redis_memcached/blob/main/Z3.PNG)
 Задание 4. Запись данных в Redis  
 Запишите в Redis несколько ключей с любыми именами и значениями.  
 Через redis-cli достаньте все записанные ключи и значения из базы, приведите скриншот этой операции.  
 **Ответ:**  
-
+Выполнено через баш скрипт:  
+[redis_list.sh](https://github.com/Svalker1989/caching_redis_memcached/blob/main/redis_list.sh)
+![](https://github.com/Svalker1989/caching_redis_memcached/blob/main/Z4.PNG)
 Дополнительные задания (со звёздочкой*)  
 Задание 5*. Работа с числами  
 Запишите в Redis ключ key5 со значением типа "int" равным числу 5. Увеличьте его на 5, чтобы в итоге в значении лежало число 10.  
